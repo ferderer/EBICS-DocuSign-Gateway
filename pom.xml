@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <name>EBICS DocuSign Gateway Parent</name>
+    <groupId>de.ferderer.ebicsdocusign</groupId>
+    <artifactId>de.ferderer.ebicsdocusign.parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>ebics-docusign-gateway</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.3</version>
+    </parent>
+
+    <properties>
+        <java.version>21</java.version>
+
+        <debug.args>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=${debug.port}</debug.args>
+        <spring.profiles.test>test</spring.profiles.test>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.14.0</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                            <arg>-Xlint:all,-serial,-processing</arg>
+                            <arg>-proc:full</arg>
+                        </compilerArgs>
+                        <debuglevel>lines,vars,source</debuglevel>
+                        <useIncrementalCompilation>false</useIncrementalCompilation>
+                        <showDeprecation>true</showDeprecation>
+                        <release>${java.version}</release>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>3.5.3</version>
+                    <configuration>
+                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                        <argLine>@{argLine} -XX:+EnableDynamicAgentLoading -Xshare:off -Dfile.encoding=UTF-8 -Dspring.profiles.active=${spring.profiles.test}</argLine>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.3</version>
+                    <configuration>
+                        <argLine>@{argLine} -XX:+EnableDynamicAgentLoading -Xshare:off -Dfile.encoding=UTF-8 -Dspring.profiles.active=${spring.profiles.test}</argLine>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.fizzed</groupId>
+                    <artifactId>fizzed-watcher-maven-plugin</artifactId>
+                    <version>1.0.6</version>
+                    <executions>
+                        <execution>
+                            <id>java</id>
+                            <configuration>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                                <watches>
+                                    <watch>
+                                        <directory>src/main/java</directory>
+                                    </watch>
+                                </watches>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>flyway</id>
+                            <configuration>
+                                <goals>
+                                    <goal>flyway:migrate@local</goal>
+                                </goals>
+                                <watches>
+                                    <watch>
+                                        <directory>src/main/resources/db</directory>
+                                    </watch>
+                                </watches>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>${flyway.version}</version>
+                    <executions>
+                        <execution>
+                            <id>local</id>
+                            <configuration>
+                                <url>${env.SPRING_DATASOURCE_URL}</url>
+                                <user>${env.SPRING_DATASOURCE_USERNAME}</user>
+                                <password>${env.SPRING_DATASOURCE_PASSWORD}</password>
+                                <locations>
+                                    <location>filesystem:src/main/resources/db/migration</location>
+                                </locations>
+                                <baselineOnMigrate>true</baselineOnMigrate>
+                                <cleanDisabled>false</cleanDisabled>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.microsoft.sqlserver</groupId>
+                            <artifactId>mssql-jdbc</artifactId>
+                            <version>${mssql-jdbc.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.flywaydb</groupId>
+                            <artifactId>flyway-sqlserver</artifactId>
+                            <version>${flyway.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.13</version>
+                    <executions>
+                        <execution>
+                            <id>jacoco-initialize</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>jacoco-report</id>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>5.1.0.4751</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <modelVersion>4.0.0</modelVersion>
+</project>
