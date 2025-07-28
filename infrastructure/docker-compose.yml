@@ -1,0 +1,16 @@
+name: EBICS DocuSign
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: ebics-gateway-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "XWVMmGkr33ayK"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
