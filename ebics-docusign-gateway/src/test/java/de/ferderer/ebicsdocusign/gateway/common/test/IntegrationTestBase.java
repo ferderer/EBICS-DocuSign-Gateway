@@ -2,6 +2,7 @@ package de.ferderer.ebicsdocusign.gateway.common.test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.ferderer.ebicsdocusign.gateway.App;
 import jakarta.servlet.http.Cookie;
 import java.util.Arrays;
 import java.util.Optional;
@@ -13,10 +14,12 @@ import org.springframework.test.web.servlet.*;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @AutoConfigureMockMvc
-@SpringBootTest
+@SpringBootTest(classes = App.class)
 @AutoConfigureTestEntityManager
+@Transactional
 abstract public class IntegrationTestBase {
 
     @Autowired
@@ -35,6 +38,14 @@ abstract public class IntegrationTestBase {
 
     protected MockHttpServletRequestBuilder post(String uri, Object... vars) {
         return MockMvcRequestBuilders.post(uri, vars);
+    }
+
+    protected MockHttpServletRequestBuilder put(String uri, Object... vars) {
+        return MockMvcRequestBuilders.put(uri, vars);
+    }
+
+    protected MockHttpServletRequestBuilder delete(String uri, Object... vars) {
+        return MockMvcRequestBuilders.delete(uri, vars);
     }
 
     protected MockHttpServletRequestBuilder multipart(String uri, Object... vars) {
@@ -62,5 +73,9 @@ abstract public class IntegrationTestBase {
 
     protected <T> String json(T content) throws JsonProcessingException {
         return om.writeValueAsString(content);
+    }
+
+    protected <T> T convertJson(String content, Class<T> cls) throws JsonProcessingException {
+        return om.readValue(content, cls);
     }
 }

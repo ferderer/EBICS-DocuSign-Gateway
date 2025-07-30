@@ -1,7 +1,7 @@
 package de.ferderer.ebicsdocusign.gateway.common.error;
 
 import de.ferderer.ebicsdocusign.gateway.common.test.IntegrationTestBase;
-import de.ferderer.ebicsdocusign.gateway.domain.test.TestController.TestRequest;
+import de.ferderer.ebicsdocusign.gateway.common.test.TestController.TestRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
