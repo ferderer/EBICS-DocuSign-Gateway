@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Auslandszahlungen in USD (Zahlungsart X Version 2) mit optionaler Instruction Priority HIGH (verursacht Gebühren) -->
+<!-- Foreign payments in USD (payment type X Version 2) with optional Instruction Priority HIGH (subject to fees) -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09 pain.001.001.09.ch.03.xsd">
+<CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>MsgId-BPX2-POS</MsgId>
+<CreDtTm>2023-08-01T00:00:00</CreDtTm>
+<NbOfTxs>10</NbOfTxs>
+<CtrlSum>30000.00</CtrlSum>
+<InitgPty>
+<Nm>Max Muster</Nm>
+<CtctDtls>
+<Othr>
+<ChanlTp>NAME</ChanlTp>
+<Id>ISO 20022 Test Platform</Id>
+</Othr>
+<Othr>
+<ChanlTp>PRVD</ChanlTp>
+<Id>Credit Suisse</Id>
+</Othr>
+<Othr>
+<ChanlTp>VRSN</ChanlTp>
+<Id>1.2</Id>
+</Othr>
+<Othr>
+<ChanlTp>SPSV</ChanlTp>
+<Id>0201</Id>
+</Othr>
+</CtctDtls>
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>PmtInfId-BPX2-POS-01</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<BtchBookg>true</BtchBookg>
+<PmtTpInf>
+<InstrPrty>HIGH</InstrPrty>
+</PmtTpInf>
+<ReqdExctnDt>
+<Dt>2025-07-31</Dt>
+</ReqdExctnDt>
+<Dbtr>
+<Nm>Max Muster</Nm>
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>CH3704835833740031000</IBAN>
+</Id>
+<Tp>
+<Prtry>CWD</Prtry>
+</Tp>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BICFI>CRESCHZZ80A</BICFI>
+</FinInstnId>
+</DbtrAgt>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-01-01</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-01-01</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">1000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId><BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Jahresbeitrag</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-01-02</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-01-02</EndToEndId>
+</PmtId><Amt>
+<InstdAmt Ccy="USD">2000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Rechnung 123456</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId><InstrId>InstrId-BPX2-POS-01-03</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-01-03</EndToEndId>
+</PmtId><Amt><InstdAmt Ccy="USD">3000.00</InstdAmt>
+</Amt><CdtrAgt><FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Ordre du 2.2.23</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-01-04</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-01-04</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">4000.00</InstdAmt>
+</Amt><CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Affitto Rustico</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-01-05</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-01-05</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">5000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Invoice 86/2023</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+<PmtInf>
+<PmtInfId>PmtInfId-BPX2-POS-02</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<BtchBookg>true</BtchBookg>
+<ReqdExctnDt>
+<Dt>2025-07-31</Dt>
+</ReqdExctnDt>
+<Dbtr>
+<Nm>Max Muster</Nm>
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>CH3704835833740031000</IBAN>
+</Id>
+<Tp>
+<Prtry>CWD</Prtry>
+</Tp>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BICFI>CRESCHZZ80A</BICFI>
+</FinInstnId>
+</DbtrAgt>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-02-01</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-02-01</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">1000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Jahresbeitrag</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-02-02</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-02-02</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">2000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Rechnung 123456</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-02-03</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-02-03</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">3000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Ordre du 2.2.23</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-02-04</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-02-04</EndToEndId>
+</PmtId><Amt>
+<InstdAmt Ccy="USD">4000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Affitto Rustico</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>InstrId-BPX2-POS-02-05</InstrId>
+<EndToEndId>EndToEndId-BPX2-POS-02-05</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">5000.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BICFI>ESSEGB2L</BICFI>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BPX2-POS</Nm>
+<PstlAdr>
+<StrtNm>Sample Street</StrtNm>
+<BldgNb>1</BldgNb>
+<PstCd>SE1 2NY</PstCd>
+<TwnNm>London</TwnNm>
+<Ctry>GB</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB32ESSE40486562136016</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Invoice 86/2023</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+</CstmrCdtTrfInitn>
+</Document>

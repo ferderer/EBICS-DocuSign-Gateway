@@ -1,0 +1,21 @@
+create table contract_workflows (
+  id                   bigint         primary key,
+  payment_id           bigint         not null,
+  template_id          bigint,
+  envelope_id          bigint,
+  status               nvarchar(20)   default 'created',
+  contract_amount      nvarchar(50)   not null,
+  contract_currency    nvarchar(3)    not null,
+  client_name          nvarchar(255)  not null,
+  client_email         nvarchar(255)  not null,
+  project_description  nvarchar(500),
+  contract_reference   nvarchar(100),
+  error_message        text,
+  created_at           datetime2      default getdate(),
+  processed_at         datetime2,
+  sent_at              datetime2,
+  completed_at         datetime2,
+  foreign key (payment_id)  references payments(id),
+  foreign key (template_id) references docusign_templates(id),
+  foreign key (envelope_id) references docusign_envelopes(id)
+);
