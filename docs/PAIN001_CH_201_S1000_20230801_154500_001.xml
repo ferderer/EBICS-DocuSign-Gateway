@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Währung nicht EUR (Zahlungsart S) -->
+<!-- Currency different than EUR (payment type S) -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09 pain.001.001.09.ch.03.xsd">
+<CstmrCdtTrfInitn><GrpHdr><MsgId>MsgId-BPS-A-NEG</MsgId><CreDtTm>2023-08-01T00:00:00</CreDtTm><NbOfTxs>10</NbOfTxs><CtrlSum>30000.00</CtrlSum><InitgPty><Nm>Max Muster</Nm><CtctDtls><Othr><ChanlTp>NAME</ChanlTp><Id>ISO 20022 Test Platform</Id></Othr><Othr><ChanlTp>PRVD</ChanlTp><Id>Credit Suisse</Id></Othr><Othr><ChanlTp>VRSN</ChanlTp><Id>1.2</Id></Othr><Othr><ChanlTp>SPSV</ChanlTp><Id>0201</Id></Othr></CtctDtls></InitgPty></GrpHdr>
+<PmtInf>
+<PmtInfId>PmtInfId-BPS-A-NEG-01</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl></PmtTpInf>
+<ReqdExctnDt><Dt>2025-07-31</Dt></ReqdExctnDt>
+<Dbtr><Nm>Max Muster</Nm></Dbtr>
+<DbtrAcct><Id><IBAN>CH3704835833740031000</IBAN></Id></DbtrAcct>
+<DbtrAgt><FinInstnId><BICFI>CRESCHZZ80A</BICFI></FinInstnId></DbtrAgt>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-01-01</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-01-01</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 1</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-01-02</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-01-02</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">2000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 2</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-01-03</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-01-03</EndToEndId></PmtId><Amt><InstdAmt Ccy="CHF">3000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 3</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-01-04</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-01-04</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">4000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 4</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-01-05</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-01-05</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">5000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 5</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+</PmtInf>
+<PmtInf>
+<PmtInfId>PmtInfId-BPS-A-NEG-02</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl></PmtTpInf>
+<ReqdExctnDt><Dt>2025-07-31</Dt></ReqdExctnDt>
+<Dbtr><Nm>Max Muster</Nm></Dbtr>
+<DbtrAcct><Id><IBAN>CH3704835833740031000</IBAN></Id></DbtrAcct>
+<DbtrAgt><FinInstnId><BICFI>CRESCHZZ80A</BICFI></FinInstnId></DbtrAgt>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-02-01</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-02-01</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 1</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-02-02</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-02-02</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">2000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 2</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-02-03</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-02-03</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">3000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 3</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-02-04</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-02-04</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">4000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 4</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+<CdtTrfTxInf><PmtId><InstrId>InstrId-BPS-A-NEG-02-05</InstrId><EndToEndId>EndToEndId-BPS-A-NEG-02-05</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">5000.00</InstdAmt></Amt><CdtrAgt><FinInstnId><BICFI>INGDDEFFXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>BPS-A-NEG</Nm><PstlAdr><Ctry>DE</Ctry><AdrLine>Musterstrasse 5</AdrLine><AdrLine>12345 Musterstadt</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>DE12500105170648489890</IBAN></Id></CdtrAcct></CdtTrfTxInf>
+</PmtInf>
+</CstmrCdtTrfInitn>
+</Document>

@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>ebics-docusign-gateway</module>
+        <module>backend</module>
     </modules>
 
     <parent>
